@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kotofeechka - Изделия из эпоксидной смолы ручной работы</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Основные стили */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f7f3;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Шапка */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #5d4037;
+        }
+
+        .logo-subtext {
+            font-size: 0.9rem;
+            color: #8d6e63;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #5d4037;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #d7ccc8;
+        }
+
+        .header-icons {
+            display: flex;
+            gap: 20px;
+            font-size: 1.2rem;
+        }
+
+        .header-icons a {
+            color: #5d4037;
+            transition: color 0.3s;
+        }
+
+        .header-icons a:hover {
+            color: #d7ccc8;
+        }
+
+        .cart-count {
+            background-color: #a1887f;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            font-size: 0.8rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            top: -8px;
+            left: -5px;
+        }
+
+        /* Герой-секция */
+        .hero {
+            background: linear-gradient(rgba(93, 64, 55, 0.8), rgba(141, 110, 99, 0.8)), url('https://images.unsplash.com/photo-1611269154421-4e27233ac5c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            margin-bottom: 50px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #d7ccc8;
+            color: #5d4037;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid #d7ccc8;
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: #d7ccc8;
+        }
+
+        /* Категории */
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: #5d4037;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: #d7ccc8;
+            margin: 10px auto;
+        }
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .category-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .category-img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .category-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .category-info h3 {
+            color: #5d4037;
+            margin-bottom: 10px;
+        }
+
+        /* Товары */
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-img {
+            height: 250px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-title {
+            font-size: 1.2rem;
+            color: #5d4037;
+            margin-bottom: 10px;
+        }
+
+        .product-description {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            height: 60px;
+            overflow: hidden;
+        }
+
+        .product-price {
+            font-size: 1.4rem;
+            color: #8d6e63;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .product-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: #888;
+            margin-bottom: 15px;
+        }
+
+        .add-to-cart {
+            background-color: #a1887f;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            width: 100%;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-weight: 600;
+        }
+
+        .add-to-cart:hover {
+            background-color: #8d6e63;
+        }
+
+        /* О нас */
+        .about {
+            background-color: white;
+            padding: 60px 20px;
+            margin-bottom: 80px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            color: #5d4037;
+            margin-bottom: 20px;
+        }
+
+        .about-img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Преимущества */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .feature i {
+            font-size: 2.5rem;
+            color: #d7ccc8;
+            margin-bottom: 20px;
+        }
+
+        .feature h3 {
+            color: #5d4037;
+            margin-bottom: 15px;
+        }
+
+        /* Подписка */
+        .newsletter {
+            background-color: #8d6e63;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 80px;
+        }
+
+        .newsletter h2 {
+            margin-bottom: 20px;
+        }
+
+        .newsletter p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-input {
+            flex-grow: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 30px 0 0 30px;
+            font-size: 1rem;
+        }
+
+        .newsletter-btn {
+            background-color: #5d4037;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 0 30px 30px 0;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .newsletter-btn:hover {
+            background-color: #3e2723;
+        }
+
+        /* Футер */
+        footer {
+            background-color: #5d4037;
+            color: #d7ccc8;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .footer-links h3, .footer-contact h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #d7ccc8;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+        .social-icons a:hover {
+            background-color: #d7ccc8;
+            color: #5d4037;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .header-top {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .nav-links {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-input, .newsletter-btn {
+                border-radius: 30px;
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header>
+        <div class="container">
+            <div class="header-top">
+                <div class="logo">
+                    <!-- Замените на свою логотип -->
+                    <div class="logo-text">Kotofeechka</div>
+                    <div class="logo-subtext">Эпоксидная смола ручной работы</div>
+                </div>
+                
+                <nav class="nav-links">
+                    <a href="#home">Главная</a>
+                    <a href="#categories">Категории</a>
+                    <a href="#products">Товары</a>
+                    <a href="#about">О нас</a>
+                    <a href="#contact">Контакты</a>
+                </nav>
+                
+                <div class="header-icons">
+                    <a href="#"><i class="fas fa-search"></i></a>
+                    <a href="#"><i class="fas fa-user"></i></a>
+                    <a href="#">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">3</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Герой-секция -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Уникальные изделия из эпоксидной смолы</h1>
+            <p>Каждое изделие создается вручную с любовью и вниманием к деталям. Украшения, предметы интерьера и аксессуары, которые рассказывают свою историю.</p>
+            <a href="#products" class="btn">Смотреть каталог</a>
+        </div>
+    </section>
+
+    <!-- Категории товаров -->
+    <section class="container" id="categories">
+        <h2 class="section-title">Категории товаров</h2>
+        <div class="categories">
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1611591437281-8a5d5c4f212b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Украшения" class="category-img">
+                <div class="category-info">
+                    <h3>Украшения</h3>
+                    <p>Кулоны, серьги, кольца и браслеты</p>
+                </div>
+            </div>
+            
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Интерьер" class="category-img">
+                <div class="category-info">
+                    <h3>Декор интерьера</h3>
+                    <p>Подсвечники, вазы, картины</p>
+                </div>
+            </div>
+            
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Аксессуары" class="category-img">
+                <div class="category-info">
+                    <h3>Аксессуары</h3>
+                    <p>Броши, заколки, брелоки</p>
+                </div>
+            </div>
+            
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Посуда" class="category-img">
+                <div class="category-info">
+                    <h3>Посуда</h3>
+                    <p>Подставки, подносы, разделочные доски</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Популярные товары -->
+    <section class="container" id="products">
+        <h2 class="section-title">Популярные товары</h2>
+        <div class="products">
+            <!-- Товар 1 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1605100940036-1e5ac6f657bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Кулон с цветами" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">Кулон "Весенний цветок"</h3>
+                    <p class="product-description">Изящный кулон с засушенными цветами и золотой фольгой. Каждый элемент уникален.</p>
+                    <div class="product-meta">
+                        <span>В наличии: 5 шт</span>
+                        <span><i class="fas fa-star"></i> 4.9</span>
+                    </div>
+                    <div class="product-price">1 890 ₽</div>
+                    <button class="add-to-cart">В корзину</button>
+                </div>
+            </div>
+            
+            <!-- Товар 2 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1602722053028-1c64d5741b55?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Серьги с сухоцветами" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">Серьги "Нежность"</h3>
+                    <p class="product-description">Легкие серьги-гвоздики с мелкими сухоцветами. Подходят для повседневного образа.</p>
+                    <div class="product-meta">
+                        <span>В наличии: 8 шт</span>
+                        <span><i class="fas fa-star"></i> 4.8</span>
+                    </div>
+                    <div class="product-price">2 450 ₽</div>
+                    <button class="add-to-cart">В корзину</button>
+                </div>
+            </div>
+            
+            <!-- Товар 3 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1545243421-89e5c9b6d12a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Браслет" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">Браслет "Морская волна"</h3>
+                    <p class="product-description">Браслет с синими оттенками и блестками, напоминающими морскую гладь.</p>
+                    <div class="product-meta">
+                        <span>В наличии: 3 шт</span>
+                        <span><i class="fas fa-star"></i> 5.0</span>
+                    </div>
+                    <div class="product-price">3 200 ₽</div>
+                    <button class="add-to-cart">В корзину</button>
+                </div>
+            </div>
+            
+            <!-- Товар 4 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1603525983905-0e60050d7a9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Подсвечник" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">Подсвечник "Золотой лес"</h3>
+                    <p class="product-description">Уникальный подсвечник с эффектом застывшего леса и золотыми вкраплениями.</p>
+                    <div class="product-meta">
+                        <span>В наличии: 2 шт</span>
+                        <span><i class="fas fa-star"></i> 4.7</span>
+                    </div>
+                    <div class="product-price">4 500 ₽</div>
+                    <button class="add-to-cart">В корзину</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- О нас -->
+    <section class="container" id="about">
+        <div class="about">
+            <h2 class="section-title">О Kotofeechka</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>История создания бренда</h2>
+                    <p>Kotofeechka — это мастерская, где рождаются уникальные изделия из эпоксидной смолы. Мы начали свой путь в 2018 году с небольших украшений для друзей, а сегодня создаем коллекции, которые расходятся по всей России.</p>
+                    <p>Каждое изделие создается вручную: от идеи до финальной полировки. Мы используем только качественные материалы, уделяя внимание каждой детали. Наша философия — создавать не просто вещи, а эмоции и воспоминания.</p>
+                    <p>В работе мы часто используем природные материалы: сухоцветы, листья, шишки, которые собираем сами. Это делает каждое изделие по-настоящему уникальным.</p>
+                    <a href="#contact" class="btn">Связаться с нами</a>
+                </div>
+                <div>
+                    <img src="https://images.unsplash.com/photo-1596727147705-61a532a659bd?ixlib=rb-4.0.3&auto=format&fit=crop&w-800&q=80" alt="Мастерская" class="about-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Преимущества -->
+    <section class="container">
+        <h2 class="section-title">Почему выбирают нас</h2>
+        <div class="features">
+            <div class="feature">
+                <i class="fas fa-hand-sparkles"></i>
+                <h3>Ручная работа</h3>
+                <p>Каждое изделие уникально и создается с любовью и вниманием к деталям</p>
+            </div>
+            
+            <div class="feature">
+                <i class="fas fa-award"></i>
+                <h3>Качественные материалы</h3>
+                <p>Используем только проверенные материалы от надежных поставщиков</p>
+            </div>
+            
+            <div class="feature">
+                <i class="fas fa-shipping-fast"></i>
+                <h3>Быстрая доставка</h3>
+                <p>Отправляем заказы в день оформления. Доставка по всей России</p>
+            </div>
+            
+            <div class="feature">
+                <i class="fas fa-gift"></i>
+                <h3>Упаковка-презент</h3>
+                <p>Каждый заказ упаковываем в крафтовую коробку с поздравительной открыткой</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Подписка на рассылку -->
+    <section class="container">
+        <div class="newsletter">
+            <h2>Подпишитесь на новости</h2>
+            <p>Узнавайте первыми о новых коллекциях, акциях и мастер-классах. Получите скидку 10% на первый заказ после подписки!</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Ваш e-mail" class="newsletter-input" required>
+                <button type="submit" class="newsletter-btn">Подписаться</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">Kotofeechka</div>
+                    <p>Мастерская изделий из эпоксидной смолы ручной работы. Создаем уникальные вещи с 2018 года.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Категории</h3>
+                    <ul>
+                        <li><a href="#">Украшения</a></li>
+                        <li><a href="#">Декор интерьера</a></li>
+                        <li><a href="#">Аксессуары</a></li>
+                        <li><a href="#">Посуда</a></li>
+                        <li><a href="#">Новинки</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Контакты</h3>
+                    <p><i class="fas fa-envelope"></i> hello@kotofeechka.ru</p>
+                    <p><i class="fas fa-phone"></i> +7 (999) 123-45-67</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Москва, ул. Творческая, 15</p>
+                    <p><i class="fas fa-clock"></i> Пн-Пт: 10:00-19:00</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Kotofeechka. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Простой JavaScript для функциональности сайта
+        
+        // Добавление товаров в корзину
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', function() {
+                const productTitle = this.closest('.product-card').querySelector('.product-title').textContent;
+                const productPrice = this.closest('.product-card').querySelector('.product-price').textContent;
+                
+                // Обновляем счетчик корзины
+                const cartCount = document.querySelector('.cart-count');
+                let currentCount = parseInt(cartCount.textContent);
+                cartCount.textContent = currentCount + 1;
+                
+                // Визуальный фидбэк
+                const originalText = this.textContent;
+                this.textContent = 'Добавлено!';
+                this.style.backgroundColor = '#8bc34a';
+                
+                setTimeout(() => {
+                    this.textContent = originalText;
+                    this.style.backgroundColor = '';
+                }, 1500);
+                
+                // Можно добавить логику для реальной корзины
+                console.log(`Добавлен товар: ${productTitle} за ${productPrice}`);
+            });
+        });
+        
+        // Плавная прокрутка для навигации
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Форма подписки
+        document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const emailInput = this.querySelector('.newsletter-input');
+            const email = emailInput.value;
+            
+            if (email) {
+                // Здесь обычно отправка на сервер
+                alert(`Спасибо за подписку! На адрес ${email} отправлено письмо с подтверждением.`);
+                emailInput.value = '';
+            }
+        });
+    </script>
+</body>
+</html>
