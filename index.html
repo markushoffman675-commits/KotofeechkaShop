@@ -38,24 +38,26 @@
 
         /* Шапка */
         header {
-            background-color: #4b0082;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-            position: sticky;
+            background-color: #4b0082; /* Цвет фона */
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); /* Тень */
+            position: sticky; /* Эффект прилипания */
             top: 0;
-            z-index: 1000;
+            z-index: 1000; /* Поверх других элементов */
         }
 
+        /* -- ========= Верхняя часть шапки ========= -- */
         .header-top {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            justify-content: space-between; /* Распределине по краям */
+            align-items: center; /* Выравние по центру */
             padding: 15px 0;
         }
 
+        /* Логотип */
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 10px; /* Расстояние между элементами */
         }
 
         .logo img {
@@ -74,11 +76,13 @@
             color: #ffffff;
         }
 
+        /* Навигационное менб */
         .nav-links {
             display: flex;
-            gap: 30px;
+            gap: 30px; /* Расстояние между пунктами меню*/
         }
 
+        /*Ссылки меню */
         .nav-links a {
             text-decoration: none;
             color: #ffffff;
@@ -87,9 +91,10 @@
         }
 
         .nav-links a:hover {
-            color: #ffffff;
+            color: #ffffff; /* Цвет при наведении */
         }
 
+        /* Иконки в шапке */
         .header-icons {
             display: flex;
             gap: 20px;
@@ -105,10 +110,11 @@
             color: #ffffff;
         }
 
+        /* Счетчик товаров в корзине*/
         .cart-count {
             background-color: #a1887f;
             color: white;
-            border-radius: 50%;
+            border-radius: 50%; /* Круглый */
             width: 20px;
             height: 20px;
             font-size: 0.8rem;
@@ -120,10 +126,11 @@
             left: -5px;
         }
 
-        /* хироу секшн */
+        /* Хироу секшн - главный баннер */
         .hero {
-            background: linear-gradient(rgba(93, 64, 55, 0.8), rgba(141, 110, 99, 0.8)), url('images/ac8e30da-29eb-4005-ba4a-689f887eb653.jpg');
-            background-size: cover;
+            /* Фон */
+            background: linear-gradient(rgba(93, 64, 55, 0.8), rgba(141, 110, 99, 0.8)), url('images/ac8e30da-29eb-4005-ba4a-689f887eb653.jpg'); /* фото на баннере. Там был котик с крылышками */
+            background-size: cover; /* Растяжение на всю область */
             background-position: center;
             color: white;
             text-align: center;
@@ -134,7 +141,7 @@
         .hero h1 {
             font-size: 3rem;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Тень текста */
         }
 
         .hero p {
@@ -143,6 +150,7 @@
             margin: 0 auto 30px;
         }
 
+        /* Основная кнопка сайта */
         .btn {
             display: inline-block;
             background-color: #d7ccc8;
@@ -156,11 +164,11 @@
         }
 
         .btn:hover {
-            background-color: transparent;
+            background-color: transparent; /* прозрачный фон при наведении */
             color: #d7ccc8;
         }
 
-        /* Категории */
+        < ======== /* Категории товаров */ ========= >
         .section-title {
             text-align: center;
             font-size: 2.2rem;
@@ -752,6 +760,7 @@
     <script>
     
 </html>
+
 
 
 
