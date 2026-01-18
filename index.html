@@ -5,13 +5,10 @@
     /* Кодировка и адаптивность */
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     /* Заголовок вкладки браузера */
     <title>Kotofeechka - Изделия из эпоксидной смолы ручной работы</title>
-
     /* Подключение иконок сайта. Мы берем бесплатные иконки с этого сайта cdnjs.cloudflare.com */
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     /* Тут все стили сайта */
     <style>
         /* Осн. стили. */
@@ -56,29 +53,24 @@
             align-items: center;
             gap: 10px; /* Расстояние между элементами */
         }
-
         .logo img {
             height: 50px;
             width: auto;
         }
-
         .logo-text {
             font-size: 1.8rem;
             font-weight: 700;
             color: #ffffff;
         }
-
         .logo-subtext {
             font-size: 0.9rem;
             color: #ffffff;
         }
-
         /* Навигационное меню */
         .nav-links {
             display: flex;
             gap: 30px; /* Расстояние между пунктами меню*/
         }
-
         /*Ссылки меню */
         .nav-links a {
             text-decoration: none;
@@ -86,27 +78,22 @@
             font-weight: 500;
             transition: color 0.3s;
         }
-
         .nav-links a:hover {
             color: #ffffff; /* Цвет при наведении */
         }
-
         /* Иконки в шапке */
         .header-icons {
             display: flex;
             gap: 20px;
             font-size: 1.2rem;
         }
-
         .header-icons a {
             color: #ffffff;
             transition: color 0.3s;
         }
-
         .header-icons a:hover {
             color: #ffffff;
         }
-
         /* Счетчик товаров в корзине*/
         .cart-count {
             background-color: #a1887f;
@@ -122,7 +109,6 @@
             top: -8px;
             left: -5px;
         }
-
         /* Хироу секшн - главный баннер */
         .hero {
             /* Фон */
@@ -134,19 +120,16 @@
             padding: 100px 20px;
             margin-bottom: 50px;
         }
-
         .hero h1 {
             font-size: 3rem;
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Тень текста */
         }
-
         .hero p {
             font-size: 1.2rem;
             max-width: 700px;
             margin: 0 auto 30px;
         }
-
         /* Основная кнопка сайта */
         .btn {
             display: inline-block;
@@ -159,12 +142,10 @@
             transition: all 0.3s;
             border: 2px solid #d7ccc8;
         }
-
         .btn:hover {
             background-color: transparent; /* прозрачный фон при наведении */
             color: #d7ccc8;
         }
-
         /* Категории товаров */
         .section-title {
             text-align: center;
@@ -173,7 +154,6 @@
             margin-bottom: 50px;
             position: relative;
         }
-
         /* Декоративная линия под заголовком */
         .section-title:after {
             content: '';
@@ -183,7 +163,6 @@
             background-color: #d7ccc8;
             margin: 10px auto;
         }
-
         /* сетка категорий */
         .categories {
             display: grid;
@@ -191,7 +170,6 @@
             gap: 30px;
             margin-bottom: 80px;
         }
-
         /* карточка категории */
         .category-card {
             background-color: white;
@@ -200,27 +178,22 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s; /* плавное поднятие */
         }
-
         .category-card:hover {
             transform: translateY(-10px); /* поднимание при наведении */
         }
-
         .category-img {
             height: 200px;
             width: 100%;
             object-fit: cover; /* обрезка изображения по размеру */
         }
-
         .category-info {
             padding: 20px;
             text-align: center;
         }
-
         .category-info h3 {
             color: #5d4037;
             margin-bottom: 10px;
         }
-        
         /* Раздел популярные товары */
         .products {
             display: grid;
@@ -228,7 +201,6 @@
             gap: 30px;
             margin-bottom: 80px;
         }
-
         /* карточка товара */
         .product-card {
             background-color: white;
@@ -237,27 +209,22 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s;
         }
-
         .product-card:hover {
             transform: translateY(-5px); /* небольшое поднятие карточки */
         }
-
         .product-img {
             height: 250px;
             width: 100%;
             object-fit: cover;
         }
-
         .product-info {
             padding: 20px;
         }
-
         .product-title {
             font-size: 1.2rem;
             color: #5d4037;
             margin-bottom: 10px;
         }
-
         .product-description {
             color: #666;
             font-size: 0.9rem;
@@ -265,14 +232,12 @@
             height: 60px;
             overflow: hidden;
         }
-
         .product-price {
             font-size: 1.4rem;
             color: #8d6e63;
             font-weight: 700;
             margin-bottom: 15px;
         }
-        
         /* информация под описанием */
         .product-meta {
             display: flex;
@@ -281,7 +246,6 @@
             color: #888;
             margin-bottom: 15px;
         }
-
         /* кнопка в корзину */
         .add-to-cart {
             background-color: #a1887f;
@@ -294,11 +258,9 @@
             transition: background-color 0.3s;
             font-weight: 600;
         }
-
         .add-to-cart:hover {
             background-color: #8d6e63;
         }
-
        /* Раздел о нас */
         .about {
             background-color: white;
@@ -307,7 +269,6 @@
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
-
         /* текст слева, фото справа */
         .about-content {
             display: grid;
@@ -315,18 +276,15 @@
             gap: 50px;
             align-items: center;
         }
-
         .about-text h2 {
             color: #5d4037;
             margin-bottom: 20px;
         }
-
         .about-img {
             width: 100%;
             border-radius: 10px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
-
         /* Раздел преимущества */
         .features {
             display: grid;
@@ -334,7 +292,6 @@
             gap: 30px;
             margin-bottom: 80px;
         }
-
         .feature {
             text-align: center;
             padding: 30px 20px;
@@ -342,19 +299,16 @@
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
-
         /* Иконки преимуществ */ 
         .feature i {
             font-size: 2.5rem;
             color: #d7ccc8;
             margin-bottom: 20px;
         }
-
         .feature h3 {
             color: #5d4037;
             margin-bottom: 15px;
         }
-
       /* Раздел подписка */
         .newsletter {
             background-color: #8d6e63;
@@ -364,22 +318,18 @@
             border-radius: 10px;
             margin-bottom: 80px;
         }
-
         .newsletter h2 {
             margin-bottom: 20px;
         }
-
         .newsletter p {
             max-width: 600px;
             margin: 0 auto 30px;
         }
-
         .newsletter-form {
             display: flex;
             max-width: 500px;
             margin: 0 auto;
         }
-
         .newsletter-input {
             flex-grow: 1;
             padding: 15px;
@@ -387,7 +337,6 @@
             border-radius: 30px 0 0 30px;
             font-size: 1rem;
         }
-
         .newsletter-btn {
             background-color: #5d4037;
             color: white;
@@ -398,18 +347,15 @@
             font-weight: 600;
             transition: background-color 0.3s;
         }
-
         .newsletter-btn:hover {
             background-color: #3e2723;
         }
-
       /* Футер - самый низ, жопка сайта */
         footer {
             background-color: #5d4037;
             color: #d7ccc8;
             padding: 60px 0 30px;
         }
-
         /* три колонки */
         .footer-content {
             display: grid;
@@ -417,44 +363,36 @@
             gap: 40px;
             margin-bottom: 40px;
         }
-
         .footer-logo {
             font-size: 1.8rem;
             font-weight: 700;
             color: white;
             margin-bottom: 20px;
         }
-
         .footer-links h3, .footer-contact h3 {
             color: white;
             margin-bottom: 20px;
             font-size: 1.2rem;
         }
-
         .footer-links ul {
             list-style: none;
         }
-
         .footer-links li {
             margin-bottom: 10px;
         }
-
         .footer-links a {
             color: #d7ccc8;
             text-decoration: none;
             transition: color 0.3s;
         }
-
         .footer-links a:hover {
             color: white;
         }
-
         .social-icons {
             display: flex;
             gap: 15px;
             margin-top: 20px;
         }
-
         .social-icons a {
             display: inline-flex;
             align-items: center;
@@ -466,12 +404,10 @@
             color: white;
             transition: background-color 0.3s;
         }
-
         .social-icons a:hover {
             background-color: #d7ccc8;
             color: #5d4037;
         }
-
         /* авторские права */
         .copyright {
             text-align: center;
@@ -479,38 +415,31 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             font-size: 0.9rem;
         }
-
         /* Адаптивность для телефонов */
-        @media (max-width: 768px) {
-            
+        @media (max-width: 768px) {   
             /* вертикальность шапки */
             .header-top {
                 flex-direction: column;
                 gap: 15px;
             }
-
             /* перенос меню */
             .nav-links {
                 gap: 15px;
                 flex-wrap: wrap;
                 justify-content: center;
             }
-
             /* уменьшение заголовка */
             .hero h1 {
                 font-size: 2.2rem;
             }
-
             /* колонка о нас становится вертикальной */
             .about-content {
                 grid-template-columns: 1fr;
             }
-
             /* форма подписки тоже становится вертикальной */
             .newsletter-form {
                 flex-direction: column;
             }
-            
             .newsletter-input, .newsletter-btn {
                 border-radius: 30px;
                 width: 100%;
@@ -529,7 +458,7 @@
                     <div class="logo-text">Kotofeechka</div>
                     <div class="logo-subtext">Эпоксидная смола ручной работы</div>
                 </div>
-                
+   
                 <nav class="nav-links">
                     <a href="#home">Главная</a>
                     <a href="#categories">Категории</a>
@@ -549,7 +478,6 @@
             </div>
         </div>
     </header>
-
     /*хироу секшн - большой баннер */
     <section class="hero" id="home">
         <div class="container">
@@ -558,7 +486,6 @@
             <a href="#products" class="btn">Смотреть каталог</a>
         </div>
     </section>
-
     /* Категории товаров */
     <section class="container" id="categories">
         <h2 class="section-title">Категории товаров</h2>
@@ -589,7 +516,6 @@
             
         </div>
     </section>
-
     /* Популярные товары */
     <section class="container" id="products">
         <h2 class="section-title">Популярные товары</h2>
@@ -608,7 +534,6 @@
                     <button class="add-to-cart">В корзину</button>
                 </div>
             </div>
-            
             /* Товар 2 */
             <div class="product-card">
                 <img src="images/cadc52c6-6824-4cc2-ab6b-39e246b45d3b.jpg" alt="Кулон с сухоцветами" class="product-img">
@@ -623,7 +548,6 @@
                     <button class="add-to-cart">В корзину</button>
                 </div>
             </div>
-            
             /* Товар 3 */
             <div class="product-card">
                 <img src="images/kulon_volna.jpg" alt="кулон морской" class="product-img">
@@ -638,7 +562,6 @@
                     <button class="add-to-cart">В корзину</button>
                 </div>
             </div>
-            
             /* Товар 4 */
             <div class="product-card">
                 <img src="images/cf2a23ad-7366-4ede-8539-8c20ecb505fb.jpg" class="product-img">
@@ -655,7 +578,6 @@
             </div>
         </div>
     </section>
-
     /* О нас */
     <section class="container" id="about">
         <div class="about">
@@ -674,7 +596,6 @@
             </div>
         </div>
     </section>
-
     /* Преимущества */
     <section class="container">
         <h2 class="section-title">Почему выбирают нас</h2>
@@ -716,7 +637,6 @@
             </div>
         </div>
     </section>
-
     /* Подписка на рассылку */
     <section class="container">
         <div class="newsletter">
@@ -728,7 +648,6 @@
             </form>
         </div>
     </section>
-
     /* Футер, жопка сайта */
     <footer id="contact">
         <div class="container">
@@ -773,6 +692,7 @@
     <script>
     
 </html>
+
 
 
 
