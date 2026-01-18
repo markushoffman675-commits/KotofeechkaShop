@@ -177,6 +177,7 @@
             position: relative;
         }
 
+        /* Декоративная линия под заголовком */
         .section-title:after {
             content: '';
             display: block;
@@ -186,6 +187,7 @@
             margin: 10px auto;
         }
 
+        /* сетка категорий */
         .categories {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -193,22 +195,23 @@
             margin-bottom: 80px;
         }
 
+        /* карточка категории */
         .category-card {
             background-color: white;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
+            transition: transform 0.3s; /* плавное поднятие */
         }
 
         .category-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-10px); /* поднимание при наведении */
         }
 
         .category-img {
             height: 200px;
             width: 100%;
-            object-fit: cover;
+            object-fit: cover; /* обрезка изображения по размеру */
         }
 
         .category-info {
@@ -221,7 +224,7 @@
             margin-bottom: 10px;
         }
 
-        /* Товары */
+        < ========= /* Раздел популярные товары */ ========= >
         .products {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -229,6 +232,7 @@
             margin-bottom: 80px;
         }
 
+        /* карточка товара */
         .product-card {
             background-color: white;
             border-radius: 10px;
@@ -238,7 +242,7 @@
         }
 
         .product-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-5px); / /* небольшое поднятие карточки */
         }
 
         .product-img {
@@ -271,7 +275,8 @@
             font-weight: 700;
             margin-bottom: 15px;
         }
-
+        
+        /* информация под описанием */
         .product-meta {
             display: flex;
             justify-content: space-between;
@@ -280,6 +285,7 @@
             margin-bottom: 15px;
         }
 
+        /* кнопка в корзину */
         .add-to-cart {
             background-color: #a1887f;
             color: white;
@@ -296,7 +302,7 @@
             background-color: #8d6e63;
         }
 
-        /* О нас */
+       < ======== /* Раздел о нас */ ========= >
         .about {
             background-color: white;
             padding: 60px 20px;
@@ -305,6 +311,7 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
 
+        /* текст слева, фото справа */
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -323,7 +330,7 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
-        /* Преимущества */
+        < ========= /* Раздел реимущества */ ========= >
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -339,6 +346,7 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
 
+        /* Иконки преимуществ */ 
         .feature i {
             font-size: 2.5rem;
             color: #d7ccc8;
@@ -350,7 +358,7 @@
             margin-bottom: 15px;
         }
 
-        /* Подписка */
+      < =========  /* Раздел подписка */ ========= >
         .newsletter {
             background-color: #8d6e63;
             color: white;
@@ -398,13 +406,14 @@
             background-color: #3e2723;
         }
 
-        /* Футер */
+      < =========  /* Футер - самый низ (жопка сайта) */ ========= >
         footer {
             background-color: #5d4037;
             color: #d7ccc8;
             padding: 60px 0 30px;
         }
 
+        /* три колонки */
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -466,6 +475,7 @@
             color: #5d4037;
         }
 
+        /* авторские права */
         .copyright {
             text-align: center;
             padding-top: 30px;
@@ -473,27 +483,33 @@
             font-size: 0.9rem;
         }
 
-        /* Адаптивность */
+        < ========= /* Адаптивность для телефонов */ ======== >
         @media (max-width: 768px) {
+            
+            /* вертикальность шапки */
             .header-top {
                 flex-direction: column;
                 gap: 15px;
             }
-            
+
+            /* перенос меню */
             .nav-links {
                 gap: 15px;
                 flex-wrap: wrap;
                 justify-content: center;
             }
-            
+
+            /* уменьшение заголовка */
             .hero h1 {
                 font-size: 2.2rem;
             }
-            
+
+            /* колонка о нас становится вертикальной */
             .about-content {
                 grid-template-columns: 1fr;
             }
-            
+
+            /* форма подписки тоже становится вертикальной */
             .newsletter-form {
                 flex-direction: column;
             }
@@ -507,7 +523,7 @@
     </style>
 </head>
 <body>
-    <!-- Шапка сайта -->
+    <!-- /* Видимая для пользователя часть шапки сайта */ -->
     <header>
         <div class="container">
             <div class="header-top">
@@ -537,7 +553,7 @@
         </div>
     </header>
 
-    <!-- хироу секшн -->
+    <!-- хироу секшн - большой баннер -->
     <section class="hero" id="home">
         <div class="container">
             <h1>Уникальные изделия из эпоксидной смолы</h1>
@@ -716,7 +732,7 @@
         </div>
     </section>
 
-    <!-- Футер -->
+    <!-- Футер (жопка сайта) -->
     <footer id="contact">
         <div class="container">
             <div class="footer-content">
@@ -760,6 +776,7 @@
     <script>
     
 </html>
+
 
 
 
