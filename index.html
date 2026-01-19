@@ -1391,12 +1391,12 @@ ${orderDetails}
             
             // Открытие почтового клиента
             const subject = `Новый заказ от ${name}`;
-            const mailtoLink = `mailto:hello@kotofeechka.ru?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
+            const mailtoLink = `mailto:inniamia@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
             
             window.location.href = mailtoLink;
             
             // Оповещение пользователя
-            alert('Заказ отправлен! Откроется почтовый клиент для отправки письма продавцу. Если письмо не открылось, отправьте его вручную на hello@kotofeechka.ru');
+            alert('Заказ отправлен! Откроется почтовый клиент для отправки письма продавцу. Если письмо не открылось, отправьте его вручную на inniamia@gmail.com');
             
             // Очистка корзины после отправки
             cart = [];
