@@ -1,464 +1,845 @@
 <!DOCTYPE html>
+<!-- Объявление типа документа - HTML5 -->
 <html lang="ru">
+<!-- Начало HTML документа, указание языка - русский -->
+
 <head>
-    <!-- Настройка сайта -->
-    <!-- Кодировка и адаптивность -->
+    <!-- Секция заголовка документа - содержит метаданные и подключения -->
+
     <meta charset="UTF-8">
+    <!-- Указание кодировки символов - UTF-8 для поддержки кириллицы -->
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Заголовок вкладки браузера -->
+    <!-- Настройка адаптивности для мобильных устройств -->
+
     <title>Kotofeechka - Изделия из эпоксидной смолы ручной работы</title>
-    <!-- Подключение иконок сайта. Мы берем бесплатные иконки с этого сайта cdnjs.cloudflare.com -->
+    <!-- Заголовок страницы, отображается во вкладке браузера -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Тут все стили сайта -->
+    <!-- Подключение библиотеки иконок Font Awesome -->
+
     <style>
-        /* Осн. стили. */
-        /* Отступы и шрифт. */
+        /* ========== ОБЩИЕ СТИЛИ ========== */
+        
+        /* Сброс стандартных отступов и установка box-sizing для всех элементов */
         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;      /* Обнуление внешних отступов */
+            padding: 0;     /* Обнуление внутренних отступов */
+            box-sizing: border-box; /* Размеры включают padding и border */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Основной шрифт */
         }
-        /* Фон и цвет. */
+        
+        /* Стилизация основного контейнера страницы */
         body {
-            line-height: 1.6;
-            color: #5d4037;
-            background-color: #f5f5f5;
+            line-height: 1.6;      /* Межстрочный интервал */
+            color: #333;           /* Основной цвет текста */
+            background-color: #f5f5f5; /* Цвет фона страницы */
         }
-        /* Ширина и центрирование. */
+        
+        /* Контейнер для ограничения ширины контента */
         .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
+            width: 90%;            /* Занимает 90% ширины экрана */
+            max-width: 1200px;     /* Максимальная ширина 1200px */
+            margin: 0 auto;        /* Автоматические отступы по бокам для центрирования */
+            padding: 0 15px;       /* Внутренние отступы слева и справа */
         }
-        /* Шапка */
+        
+        /* ========== ШАПКА САЙТА ========== */
+        
+        /* Основной блок шапки */
         header {
-            background-color: #4b0082; /* Цвет фона */
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); /* Тень */
-            position: sticky; /* Эффект прилипания */
-            top: 0;
-            z-index: 1000; /* Поверх других элементов */
+            background-color: #4b0082; /* Темно-фиолетовый фон */
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); /* Тень под шапкой */
+            position: sticky; /* Фиксация при прокрутке */
+            top: 0;           /* Позиционирование сверху */
+            z-index: 1000;    /* Приоритет отображения */
         }
-        /* Верхняя часть шапки */
+        
+        /* Верхняя часть шапки с элементами навигации */
         .header-top {
-            display: flex;
-            justify-content: space-between; /* Распределине по краям */
-            align-items: center; /* Выравние по центру */
-            padding: 15px 0;
+            display: flex; /* Использование Flexbox для выравнивания */
+            justify-content: space-between; /* Распределение пространства между элементами */
+            align-items: center; /* Вертикальное выравнивание по центру */
+            padding: 15px 0; /* Вертикальные отступы */
         }
-        /* Логотип */
+        
+        /* Блок с логотипом */
         .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px; /* Расстояние между элементами */
+            display: flex; /* Flex-контейнер для логотипа */
+            flex-direction: column; /* Вертикальное расположение элементов */
+            gap: 5px; /* Расстояние между элементами */
         }
-        .logo img {
-            height: 50px;
-            width: auto;
-        }
+        
+        /* Текст логотипа */
         .logo-text {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #ffffff;
+            font-size: 1.8rem; /* Размер шрифта */
+            font-weight: 700;  /* Жирное начертание */
+            color: #ffffff;    /* Белый цвет */
         }
+        
+        /* Подпись под логотипом */
         .logo-subtext {
-            font-size: 0.9rem;
-            color: #ffffff;
+            font-size: 0.9rem;    /* Размер шрифта */
+            color: #ffffff;       /* Белый цвет */
+            opacity: 0.9;         /* Прозрачность 90% */
         }
-        /* Навигационное меню */
+        
+        /* Навигационные ссылки */
         .nav-links {
-            display: flex;
-            gap: 30px; /* Расстояние между пунктами меню*/
+            display: flex; /* Горизонтальное расположение ссылок */
+            gap: 30px;     /* Расстояние между ссылками */
         }
-        /*Ссылки меню */
+        
+        /* Стили для каждой ссылки навигации */
         .nav-links a {
-            text-decoration: none;
-            color: #ffffff;
-            font-weight: 500;
-            transition: color 0.3s;
+            text-decoration: none; /* Удаление подчеркивания */
+            color: #ffffff;        /* Белый цвет */
+            font-weight: 500;      /* Средняя толщина шрифта */
+            transition: opacity 0.3s; /* Анимация изменения прозрачности */
         }
+        
+        /* Эффект при наведении на ссылку */
         .nav-links a:hover {
-            color: #d7ccc8; /* Цвет при наведении */
+            opacity: 0.8; /* Уменьшение прозрачности до 80% */
         }
-        /* Иконки в шапке */
+        
+        /* Иконки в правой части шапки */
         .header-icons {
-            display: flex;
-            gap: 20px;
-            font-size: 1.2rem;
+            display: flex;  /* Горизонтальное расположение иконок */
+            gap: 20px;      /* Расстояние между иконками */
+            font-size: 1.2rem; /* Размер иконок */
+            position: relative; /* Для позиционирования счетчика корзины */
         }
+        
+        /* Стили для ссылок-иконок */
         .header-icons a {
-            color: #ffffff;
-            transition: color 0.3s;
+            color: #ffffff;        /* Белый цвет */
+            transition: opacity 0.3s; /* Анимация прозрачности */
+            position: relative;    /* Для позиционирования счетчика */
         }
+        
+        /* Эффект при наведении на иконку */
         .header-icons a:hover {
-            color: #d7ccc8;
+            opacity: 0.8; /* Уменьшение прозрачности */
         }
-        /* Счетчик товаров в корзине*/
+        
+        /* Счетчик товаров в корзине */
         .cart-count {
-            background-color: #a1887f;
-            color: white;
-            border-radius: 50%; /* Круглый */
-            width: 20px;
-            height: 20px;
-            font-size: 0.8rem;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            top: -8px;
-            left: -5px;
+            background-color: #ff6b6b; /* Красный фон */
+            color: white;               /* Белый текст */
+            border-radius: 50%;         /* Круглая форма */
+            width: 20px;                /* Ширина */
+            height: 20px;               /* Высота */
+            font-size: 0.8rem;          /* Размер шрифта */
+            display: inline-flex;       /* Flex-контейнер для центрирования */
+            align-items: center;        /* Вертикальное центрирование */
+            justify-content: center;    /* Горизонтальное центрирование */
+            position: absolute;         /* Абсолютное позиционирование */
+            top: -5px;                  /* Смещение вверх */
+            right: -5px;                /* Смещение вправо */
         }
-        /* Хироу секшн - главный баннер */
+        
+        /* ========== МОДАЛЬНОЕ ОКНО КОРЗИНЫ ========== */
+        
+        /* Основной контейнер модального окна */
+        .cart-modal {
+            display: none; /* Скрыто по умолчанию */
+            position: fixed; /* Фиксированное позиционирование */
+            top: 0;          /* Привязка к верху */
+            left: 0;         /* Привязка к левому краю */
+            width: 100%;     /* Полная ширина экрана */
+            height: 100%;    /* Полная высота экрана */
+            background-color: rgba(0, 0, 0, 0.7); /* Полупрозрачный черный фон */
+            z-index: 2000;   /* Высокий приоритет отображения */
+            justify-content: center; /* Горизонтальное центрирование */
+            align-items: center;     /* Вертикальное центрирование */
+        }
+        
+        /* Содержимое модального окна */
+        .cart-content {
+            background-color: white; /* Белый фон */
+            border-radius: 10px;     /* Закругленные углы */
+            width: 90%;              /* Ширина 90% от экрана */
+            max-width: 800px;        /* Максимальная ширина */
+            max-height: 80vh;        /* Максимальная высота 80% от экрана */
+            overflow-y: auto;        /* Вертикальная прокрутка при необходимости */
+            padding: 30px;           /* Внутренние отступы */
+            position: relative;      /* Относительное позиционирование */
+        }
+        
+        /* Кнопка закрытия модального окна */
+        .close-cart {
+            position: absolute; /* Абсолютное позиционирование */
+            top: 15px;          /* Отступ сверху */
+            right: 15px;        /* Отступ справа */
+            font-size: 1.5rem;  /* Размер иконки */
+            cursor: pointer;    /* Курсор-указатель */
+            color: #5d4037;     /* Коричневый цвет */
+            background: none;   /* Прозрачный фон */
+            border: none;       /* Без рамки */
+        }
+        
+        /* Заголовок корзины */
+        .cart-title {
+            color: #5d4037;      /* Коричневый цвет */
+            margin-bottom: 20px; /* Отступ снизу */
+            font-size: 1.8rem;   /* Размер шрифта */
+        }
+        
+        /* Контейнер для товаров в корзине */
+        .cart-items {
+            margin-bottom: 30px; /* Отступ снизу */
+        }
+        
+        /* Стили для отдельного товара в корзине */
+        .cart-item {
+            display: flex; /* Flex-контейнер для товара */
+            align-items: center; /* Вертикальное выравнивание */
+            padding: 15px 0; /* Вертикальные отступы */
+            border-bottom: 1px solid #eee; /* Разделительная линия */
+        }
+        
+        /* Изображение товара в корзине */
+        .cart-item-img {
+            width: 80px;       /* Ширина изображения */
+            height: 80px;      /* Высота изображения */
+            object-fit: cover; /* Обрезка изображения по размерам */
+            border-radius: 5px; /* Закругленные углы */
+            margin-right: 15px; /* Отступ справа */
+        }
+        
+        /* Информация о товаре */
+        .cart-item-info {
+            flex-grow: 1; /* Растягивание на доступное пространство */
+        }
+        
+        /* Название товара */
+        .cart-item-title {
+            color: #5d4037;    /* Коричневый цвет */
+            font-weight: 600;  /* Полужирное начертание */
+            margin-bottom: 5px; /* Отступ снизу */
+        }
+        
+        /* Цена товара */
+        .cart-item-price {
+            color: #8d6e63;   /* Светло-коричневый цвет */
+            font-weight: 700; /* Жирное начертание */
+        }
+        
+        /* Контейнер для управления количеством */
+        .cart-item-quantity {
+            display: flex;      /* Горизонтальное расположение */
+            align-items: center; /* Вертикальное центрирование */
+            gap: 10px;          /* Расстояние между элементами */
+            margin-top: 5px;    /* Отступ сверху */
+        }
+        
+        /* Кнопки изменения количества */
+        .quantity-btn {
+            width: 25px;                /* Ширина кнопки */
+            height: 25px;               /* Высота кнопки */
+            background-color: #d7ccc8;  /* Фон кнопки */
+            border: none;               /* Без рамки */
+            border-radius: 50%;         /* Круглая форма */
+            cursor: pointer;            /* Курсор-указатель */
+            color: #5d4037;             /* Цвет текста */
+            font-weight: bold;          /* Жирный текст */
+            transition: background-color 0.3s; /* Анимация фона */
+        }
+        
+        /* Эффект при наведении на кнопки количества */
+        .quantity-btn:hover {
+            background-color: #a1887f; /* Темный фон */
+            color: white;              /* Белый текст */
+        }
+        
+        /* Общая стоимость позиции */
+        .cart-item-total {
+            font-weight: 700;      /* Жирное начертание */
+            color: #5d4037;        /* Коричневый цвет */
+            min-width: 100px;      /* Минимальная ширина */
+            text-align: right;     /* Выравнивание по правому краю */
+        }
+        
+        /* Кнопка удаления товара */
+        .remove-item {
+            background: none;   /* Прозрачный фон */
+            border: none;       /* Без рамки */
+            color: #888;        /* Серый цвет */
+            cursor: pointer;    /* Курсор-указатель */
+            margin-left: 15px;  /* Отступ слева */
+            font-size: 1rem;    /* Размер иконки */
+        }
+        
+        /* Эффект при наведении на кнопку удаления */
+        .remove-item:hover {
+            color: #f44336; /* Красный цвет */
+        }
+        
+        /* Сообщение о пустой корзине */
+        .cart-empty {
+            text-align: center; /* Центрирование текста */
+            color: #888;        /* Серый цвет */
+            padding: 40px 0;    /* Вертикальные отступы */
+        }
+        
+        /* Общая сумма заказа */
+        .cart-total {
+            text-align: right;   /* Выравнивание по правому краю */
+            margin-bottom: 30px; /* Отступ снизу */
+            font-size: 1.3rem;   /* Размер шрифта */
+            color: #5d4037;      /* Коричневый цвет */
+            font-weight: 700;    /* Жирное начертание */
+        }
+        
+        /* Форма для данных покупателя */
+        .cart-form {
+            background-color: #f9f9f9; /* Светло-серый фон */
+            padding: 20px;             /* Внутренние отступы */
+            border-radius: 8px;        /* Закругленные углы */
+            margin-bottom: 20px;       /* Отступ снизу */
+        }
+        
+        /* Группа полей формы */
+        .form-group {
+            margin-bottom: 15px; /* Отступ между группами */
+        }
+        
+        /* Подписи к полям формы */
+        .form-group label {
+            display: block;        /* Блочное отображение */
+            margin-bottom: 5px;    /* Отступ снизу */
+            color: #5d4037;        /* Коричневый цвет */
+            font-weight: 500;      /* Средняя толщина шрифта */
+        }
+        
+        /* Поля ввода формы */
+        .form-group input,
+        .form-group textarea {
+            width: 100%;            /* Полная ширина */
+            padding: 10px;          /* Внутренние отступы */
+            border: 1px solid #ddd; /* Серая рамка */
+            border-radius: 5px;     /* Закругленные углы */
+            font-size: 1rem;        /* Размер шрифта */
+        }
+        
+        /* Текстовое поле для комментария */
+        .form-group textarea {
+            height: 100px;    /* Высота поля */
+            resize: vertical; /* Возможность изменения высоты */
+        }
+        
+        /* Контейнер для кнопок корзины */
+        .cart-actions {
+            display: flex;                  /* Flex-контейнер */
+            justify-content: space-between; /* Распределение пространства */
+            gap: 15px;                      /* Расстояние между кнопками */
+        }
+        
+        /* Общие стили для кнопок корзины */
+        .cart-btn {
+            padding: 12px 25px;   /* Внутренние отступы */
+            border: none;         /* Без рамки */
+            border-radius: 5px;   /* Закругленные углы */
+            cursor: pointer;      /* Курсор-указатель */
+            font-weight: 600;     /* Полужирное начертание */
+            transition: all 0.3s; /* Анимация всех свойств */
+            flex: 1;              /* Равномерное распределение ширины */
+        }
+        
+        /* Кнопка продолжения покупок */
+        .continue-shopping {
+            background-color: #d7ccc8; /* Светло-коричневый фон */
+            color: #5d4037;            /* Коричневый текст */
+        }
+        
+        /* Эффект при наведении на кнопку продолжения */
+        .continue-shopping:hover {
+            background-color: #a1887f; /* Темный фон */
+            color: white;              /* Белый текст */
+        }
+        
+        /* Кнопка отправки заказа */
+        .send-order {
+            background-color: #5d4037; /* Темно-коричневый фон */
+            color: white;              /* Белый текст */
+        }
+        
+        /* Эффект при наведении на кнопку отправки */
+        .send-order:hover {
+            background-color: #3e2723; /* Очень темный коричневый */
+        }
+        
+        /* ========== ГЛАВНЫЙ БАННЕР ========== */
+        
         .hero {
-            /* Фон */
-            background: linear-gradient(rgba(93, 64, 55, 0.8), rgba(141, 110, 99, 0.8)), url('images/ac8e30da-29eb-4005-ba4a-689f887eb653.jpg'); /* фото на баннере. Там был котик с крылышками */
-            background-size: cover; /* Растяжение на всю область */
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: 100px 20px;
-            margin-bottom: 50px;
+            background: linear-gradient(rgba(93, 64, 55, 0.8), rgba(141, 110, 99, 0.8)), 
+                        url('images/hero-bg.jpg');
+            /* Градиент поверх фонового изображения */
+            background-size: cover;      /* Масштабирование фона */
+            background-position: center; /* Центрирование фона */
+            color: white;                /* Белый цвет текста */
+            text-align: center;          /* Центрирование текста */
+            padding: 100px 20px;         /* Внутренние отступы */
+            margin-bottom: 50px;         /* Внешний отступ снизу */
         }
+        
+        /* Заголовок баннера */
         .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
+            font-size: 3rem;                     /* Крупный шрифт */
+            margin-bottom: 20px;                 /* Отступ снизу */
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Тень текста */
         }
+        
+        /* Текст баннера */
         .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 30px;
+            font-size: 1.2rem;      /* Размер шрифта */
+            max-width: 700px;       /* Максимальная ширина */
+            margin: 0 auto 30px;    /* Центрирование с отступом снизу */
         }
+        
         /* Основная кнопка сайта */
         .btn {
-            display: inline-block;
-            background-color: #d7ccc8;
-            color: #5d4037;
-            padding: 12px 30px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            border: 2px solid #d7ccc8;
+            display: inline-block;      /* Блочно-строчный элемент */
+            background-color: #d7ccc8;  /* Цвет фона */
+            color: #5d4037;             /* Цвет текста */
+            padding: 12px 30px;         /* Внутренние отступы */
+            border-radius: 30px;        /* Сильно закругленные углы */
+            text-decoration: none;      /* Без подчеркивания */
+            font-weight: 600;           /* Полужирное начертание */
+            transition: all 0.3s;       /* Анимация всех свойств */
+            border: 2px solid #d7ccc8;  /* Рамка */
         }
+        
+        /* Эффект при наведении на основную кнопку */
         .btn:hover {
-            background-color: transparent; /* прозрачный фон при наведении */
-            color: #d7ccc8;
+            background-color: transparent; /* Прозрачный фон */
+            color: #d7ccc8;                /* Цвет текста как фон */
         }
-        /* Категории товаров */
+        
+        /* ========== ОБЩИЕ ЗАГОЛОВКИ РАЗДЕЛОВ ========== */
+        
         .section-title {
-            text-align: center;
-            font-size: 2.2rem;
-            color: #5d4037;
-            margin-bottom: 50px;
-            position: relative;
+            text-align: center;     /* Центрирование текста */
+            font-size: 2.2rem;      /* Размер шрифта */
+            color: #5d4037;         /* Коричневый цвет */
+            margin-bottom: 50px;    /* Отступ снизу */
+            position: relative;     /* Относительное позиционирование */
         }
+        
         /* Декоративная линия под заголовком */
         .section-title:after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 3px;
-            background-color: #d7ccc8;
-            margin: 10px auto;
+            content: '';                /* Псевдоэлемент */
+            display: block;             /* Блочное отображение */
+            width: 80px;                /* Ширина линии */
+            height: 3px;                /* Высота линии */
+            background-color: #d7ccc8;  /* Цвет линии */
+            margin: 10px auto;          /* Центрирование с отступами */
         }
-        /* сетка категорий */
+        
+        /* ========== КАТЕГОРИИ ТОВАРОВ ========== */
+        
+        /* Сетка категорий */
         .categories {
-            display: grid;
+            display: grid; /* CSS Grid Layout */
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-bottom: 80px;
+            /* Автоматическое создание колонок минимальной шириной 250px */
+            gap: 30px;           /* Расстояние между элементами */
+            margin-bottom: 80px; /* Отступ снизу */
         }
-        /* карточка категории */
+        
+        /* Карточка категории */
         .category-card {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s; /* плавное поднятие */
+            background-color: white;      /* Белый фон */
+            border-radius: 10px;          /* Закругленные углы */
+            overflow: hidden;             /* Скрытие выходящего контента */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Тень */
+            transition: transform 0.3s;   /* Анимация трансформации */
         }
+        
+        /* Эффект поднятия карточки при наведении */
         .category-card:hover {
-            transform: translateY(-10px); /* поднимание при наведении */
+            transform: translateY(-10px); /* Смещение вверх */
         }
+        
+        /* Изображение категории */
         .category-img {
-            height: 200px;
-            width: 100%;
-            object-fit: cover; /* обрезка изображения по размеру */
+            height: 200px;      /* Фиксированная высота */
+            width: 100%;        /* Полная ширина */
+            object-fit: cover;  /* Масштабирование с обрезкой */
         }
+        
+        /* Информация о категории */
         .category-info {
-            padding: 20px;
-            text-align: center;
+            padding: 20px;      /* Внутренние отступы */
+            text-align: center; /* Центрирование текста */
         }
+        
+        /* Заголовок категории */
         .category-info h3 {
-            color: #5d4037;
-            margin-bottom: 10px;
+            color: #5d4037;      /* Коричневый цвет */
+            margin-bottom: 10px; /* Отступ снизу */
         }
-        /* Раздел популярные товары */
+        
+        /* ========== КАТАЛОГ ТОВАРОВ ========== */
+        
+        /* Сетка товаров */
         .products {
-            display: grid;
+            display: grid; /* CSS Grid Layout */
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 30px;
-            margin-bottom: 80px;
+            /* Автоматическое заполнение колонками шириной от 280px */
+            gap: 30px;           /* Расстояние между элементами */
+            margin-bottom: 80px; /* Отступ снизу */
         }
-        /* карточка товара */
+        
+        /* Карточка товара */
         .product-card {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
+            background-color: white;      /* Белый фон */
+            border-radius: 10px;          /* Закругленные углы */
+            overflow: hidden;             /* Скрытие выходящего контента */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Тень */
+            transition: transform 0.3s;   /* Анимация трансформации */
         }
+        
+        /* Эффект поднятия товара при наведении */
         .product-card:hover {
-            transform: translateY(-5px); /* небольшое поднятие карточки */
+            transform: translateY(-5px); /* Смещение вверх */
         }
+        
+        /* Изображение товара */
         .product-img {
-            height: 250px;
-            width: 100%;
-            object-fit: cover;
+            height: 250px;      /* Фиксированная высота */
+            width: 100%;        /* Полная ширина */
+            object-fit: cover;  /* Масштабирование с обрезкой */
         }
+        
+        /* Информация о товаре */
         .product-info {
-            padding: 20px;
+            padding: 20px; /* Внутренние отступы */
         }
+        
+        /* Название товара */
         .product-title {
-            font-size: 1.2rem;
-            color: #5d4037;
-            margin-bottom: 10px;
+            font-size: 1.2rem;    /* Размер шрифта */
+            color: #5d4037;       /* Коричневый цвет */
+            margin-bottom: 10px;  /* Отступ снизу */
         }
+        
+        /* Описание товара */
         .product-description {
-            color: #666;
-            font-size: 0.9rem;
-            margin-bottom: 15px;
-            height: 60px;
-            overflow: hidden;
+            color: #666;           /* Серый цвет */
+            font-size: 0.9rem;     /* Размер шрифта */
+            margin-bottom: 15px;   /* Отступ снизу */
+            height: 60px;          /* Фиксированная высота */
+            overflow: hidden;      /* Скрытие переполнения */
         }
+        
+        /* Цена товара */
         .product-price {
-            font-size: 1.4rem;
-            color: #8d6e63;
-            font-weight: 700;
-            margin-bottom: 15px;
+            font-size: 1.4rem;    /* Размер шрифта */
+            color: #8d6e63;       /* Светло-коричневый цвет */
+            font-weight: 700;     /* Жирное начертание */
+            margin-bottom: 15px;  /* Отступ снизу */
         }
-        /* информация под описанием */
+        
+        /* Мета-информация о товаре */
         .product-meta {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.9rem;
-            color: #888;
-            margin-bottom: 15px;
+            display: flex;                    /* Flex-контейнер */
+            justify-content: space-between;   /* Распределение пространства */
+            font-size: 0.9rem;                /* Размер шрифта */
+            color: #888;                      /* Серый цвет */
+            margin-bottom: 15px;              /* Отступ снизу */
         }
-        /* кнопка в корзину */
+        
+        /* Кнопка добавления в корзину */
         .add-to-cart {
-            background-color: #a1887f;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            width: 100%;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            font-weight: 600;
+            background-color: #a1887f;    /* Коричневый фон */
+            color: white;                 /* Белый текст */
+            border: none;                 /* Без рамки */
+            padding: 10px 20px;           /* Внутренние отступы */
+            border-radius: 5px;           /* Закругленные углы */
+            width: 100%;                  /* Полная ширина */
+            cursor: pointer;              /* Курсор-указатель */
+            transition: background-color 0.3s; /* Анимация фона */
+            font-weight: 600;             /* Полужирное начертание */
         }
+        
+        /* Эффект при наведении на кнопку добавления */
         .add-to-cart:hover {
-            background-color: #8d6e63;
+            background-color: #8d6e63; /* Темный коричневый */
         }
-       /* Раздел о нас */
+        
+        /* ========== РАЗДЕЛ "О НАС" ========== */
+        
         .about {
-            background-color: white;
-            padding: 60px 20px;
-            margin-bottom: 80px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            background-color: white;      /* Белый фон */
+            padding: 60px 20px;           /* Внутренние отступы */
+            margin-bottom: 80px;          /* Внешний отступ снизу */
+            border-radius: 10px;          /* Закругленные углы */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Легкая тень */
         }
-        /* текст слева, фото справа */
+        
+        /* Двухколоночный макет раздела */
         .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
+            display: grid;                      /* CSS Grid Layout */
+            grid-template-columns: 1fr 1fr;     /* Две равные колонки */
+            gap: 50px;                          /* Расстояние между колонками */
+            align-items: center;                /* Вертикальное выравнивание */
         }
+        
+        /* Заголовок в разделе "О нас" */
         .about-text h2 {
-            color: #5d4037;
-            margin-bottom: 20px;
+            color: #5d4037;      /* Коричневый цвет */
+            margin-bottom: 20px; /* Отступ снизу */
         }
+        
+        /* Изображение в разделе "О нас" */
         .about-img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 100%;                            /* Полная ширина */
+            border-radius: 10px;                    /* Закругленные углы */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Тень */
         }
-        /* Раздел преимущества */
+        
+        /* ========== РАЗДЕЛ ПРЕИМУЩЕСТВ ========== */
+        
+        /* Сетка преимуществ */
         .features {
-            display: grid;
+            display: grid; /* CSS Grid Layout */
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-bottom: 80px;
+            /* Автоматическое создание колонок */
+            gap: 30px;           /* Расстояние между элементами */
+            margin-bottom: 80px; /* Отступ снизу */
         }
+        
+        /* Отдельное преимущество */
         .feature {
-            text-align: center;
-            padding: 30px 20px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;        /* Центрирование текста */
+            padding: 30px 20px;        /* Внутренние отступы */
+            background-color: white;   /* Белый фон */
+            border-radius: 10px;       /* Закругленные углы */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Легкая тень */
         }
-        /* Иконки преимуществ */ 
+        
+        /* Иконка преимущества */
         .feature i {
-            font-size: 2.5rem;
-            color: #d7ccc8;
-            margin-bottom: 20px;
+            font-size: 2.5rem;    /* Размер иконки */
+            color: #d7ccc8;       /* Цвет иконки */
+            margin-bottom: 20px;  /* Отступ снизу */
         }
+        
+        /* Заголовок преимущества */
         .feature h3 {
-            color: #5d4037;
-            margin-bottom: 15px;
+            color: #5d4037;      /* Коричневый цвет */
+            margin-bottom: 15px; /* Отступ снизу */
         }
-      /* Раздел подписка */
+        
+        /* ========== ФОРМА ПОДПИСКИ ========== */
+        
         .newsletter {
-            background-color: #8d6e63;
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-            border-radius: 10px;
-            margin-bottom: 80px;
+            background-color: #8d6e63; /* Коричневый фон */
+            color: white;              /* Белый текст */
+            padding: 60px 20px;        /* Внутренние отступы */
+            text-align: center;        /* Центрирование текста */
+            border-radius: 10px;       /* Закругленные углы */
+            margin-bottom: 80px;       /* Отступ снизу */
         }
+        
+        /* Заголовок формы подписки */
         .newsletter h2 {
-            margin-bottom: 20px;
+            margin-bottom: 20px; /* Отступ снизу */
         }
+        
+        /* Текст формы подписки */
         .newsletter p {
-            max-width: 600px;
-            margin: 0 auto 30px;
+            max-width: 600px;       /* Максимальная ширина */
+            margin: 0 auto 30px;    /* Центрирование с отступом */
         }
+        
+        /* Контейнер формы */
         .newsletter-form {
-            display: flex;
-            max-width: 500px;
-            margin: 0 auto;
+            display: flex;      /* Flex-контейнер */
+            max-width: 500px;   /* Максимальная ширина */
+            margin: 0 auto;     /* Центрирование */
         }
+        
+        /* Поле ввода email */
         .newsletter-input {
-            flex-grow: 1;
-            padding: 15px;
-            border: none;
-            border-radius: 30px 0 0 30px;
-            font-size: 1rem;
+            flex-grow: 1;                 /* Растягивание на доступное пространство */
+            padding: 15px;                /* Внутренние отступы */
+            border: none;                 /* Без рамки */
+            border-radius: 30px 0 0 30px; /* Закругление слева */
+            font-size: 1rem;              /* Размер шрифта */
         }
+        
+        /* Кнопка подписки */
         .newsletter-btn {
-            background-color: #5d4037;
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            border-radius: 0 30px 30px 0;
-            cursor: pointer;
-            font-weight: 600;
-            transition: background-color 0.3s;
+            background-color: #5d4037;  /* Темно-коричневый фон */
+            color: white;               /* Белый текст */
+            border: none;               /* Без рамки */
+            padding: 15px 30px;         /* Внутренние отступы */
+            border-radius: 0 30px 30px 0; /* Закругление справа */
+            cursor: pointer;            /* Курсор-указатель */
+            font-weight: 600;           /* Полужирное начертание */
+            transition: background-color 0.3s; /* Анимация фона */
         }
+        
+        /* Эффект при наведении на кнопку подписки */
         .newsletter-btn:hover {
-            background-color: #3e2723;
+            background-color: #3e2723; /* Очень темный коричневый */
         }
-      /* Футер - самый низ, жопка сайта */
+        
+        /* ========== ПОДВАЛ САЙТА ========== */
+        
         footer {
-            background-color: #5d4037;
-            color: #d7ccc8;
-            padding: 60px 0 30px;
+            background-color: #5d4037; /* Темно-коричневый фон */
+            color: #d7ccc8;            /* Светло-коричневый текст */
+            padding: 60px 0 30px;      /* Внутренние отступы */
         }
-        /* три колонки */
+        
+        /* Трехколоночный макет подвала */
         .footer-content {
-            display: grid;
+            display: grid; /* CSS Grid Layout */
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
+            /* Автоматическое создание колонок */
+            gap: 40px;           /* Расстояние между колонками */
+            margin-bottom: 40px; /* Отступ снизу */
         }
+        
+        /* Логотип в подвале */
         .footer-logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: white;
-            margin-bottom: 20px;
+            font-size: 1.8rem;   /* Размер шрифта */
+            font-weight: 700;    /* Жирное начертание */
+            color: white;        /* Белый цвет */
+            margin-bottom: 20px; /* Отступ снизу */
         }
-        .footer-links h3, .footer-contact h3 {
-            color: white;
-            margin-bottom: 20px;
-            font-size: 1.2rem;
+        
+        /* Заголовки колонок подвала */
+        .footer-links h3,
+        .footer-contact h3 {
+            color: white;        /* Белый цвет */
+            margin-bottom: 20px; /* Отступ снизу */
+            font-size: 1.2rem;   /* Размер шрифта */
         }
+        
+        /* Списки ссылок в подвале */
         .footer-links ul {
-            list-style: none;
+            list-style: none; /* Удаление маркеров списка */
         }
+        
+        /* Элементы списка ссылок */
         .footer-links li {
-            margin-bottom: 10px;
+            margin-bottom: 10px; /* Отступ между элементами */
         }
+        
+        /* Ссылки в подвале */
         .footer-links a {
-            color: #d7ccc8;
-            text-decoration: none;
-            transition: color 0.3s;
+            color: #d7ccc8;        /* Цвет ссылок */
+            text-decoration: none; /* Без подчеркивания */
+            transition: color 0.3s; /* Анимация цвета */
         }
+        
+        /* Эффект при наведении на ссылки */
         .footer-links a:hover {
-            color: white;
+            color: white; /* Белый цвет */
         }
+        
+        /* Иконки социальных сетей */
         .social-icons {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
+            display: flex;    /* Flex-контейнер */
+            gap: 15px;        /* Расстояние между иконками */
+            margin-top: 20px; /* Отступ сверху */
         }
+        
+        /* Отдельная иконка социальной сети */
         .social-icons a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: white;
-            transition: background-color 0.3s;
+            display: inline-flex;       /* Flex-контейнер */
+            align-items: center;        /* Вертикальное центрирование */
+            justify-content: center;    /* Горизонтальное центрирование */
+            width: 40px;                /* Ширина */
+            height: 40px;               /* Высота */
+            background-color: rgba(255, 255, 255, 0.1); /* Полупрозрачный фон */
+            border-radius: 50%;         /* Круглая форма */
+            color: white;               /* Белый цвет */
+            transition: background-color 0.3s; /* Анимация фона */
         }
+        
+        /* Эффект при наведении на иконки */
         .social-icons a:hover {
-            background-color: #d7ccc8;
-            color: #5d4037;
+            background-color: #d7ccc8; /* Светло-коричневый фон */
+            color: #5d4037;            /* Коричневый цвет иконки */
         }
-        /* авторские права */
+        
+        /* Блок с копирайтом */
         .copyright {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.9rem;
+            text-align: center;               /* Центрирование текста */
+            padding-top: 30px;                /* Отступ сверху */
+            border-top: 1px solid rgba(255, 255, 255, 0.1); /* Разделительная линия */
+            font-size: 0.9rem;                /* Размер шрифта */
         }
-        /* Адаптивность для телефонов */
-        @media (max-width: 768px) {   
-            /* вертикальность шапки */
+        
+        /* ========== АДАПТИВНЫЕ СТИЛИ ========== */
+        
+        /* Медиа-запрос для устройств с шириной экрана до 768px */
+        @media (max-width: 768px) {
+            
+            /* Вертикальное расположение элементов шапки */
             .header-top {
-                flex-direction: column;
-                gap: 15px;
+                flex-direction: column; /* Вертикальное направление */
+                gap: 15px;              /* Расстояние между элементами */
             }
-            /* перенос меню */
+            
+            /* Перенос навигационных ссылок */
             .nav-links {
-                gap: 15px;
-                flex-wrap: wrap;
-                justify-content: center;
+                gap: 15px;          /* Уменьшенное расстояние */
+                flex-wrap: wrap;    /* Перенос на новую строку */
+                justify-content: center; /* Центрирование */
             }
-            /* уменьшение заголовка */
+            
+            /* Уменьшение заголовка баннера */
             .hero h1 {
-                font-size: 2.2rem;
+                font-size: 2.2rem; /* Меньший размер шрифта */
             }
-            /* колонка о нас становится вертикальной */
+            
+            /* Одно колоночное расположение в разделе "О нас" */
             .about-content {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr; /* Одна колонка */
             }
-            /* форма подписки тоже становится вертикальной */
+            
+            /* Вертикальное расположение формы подписки */
             .newsletter-form {
-                flex-direction: column;
+                flex-direction: column; /* Вертикальное направление */
             }
-            .newsletter-input, .newsletter-btn {
-                border-radius: 30px;
-                width: 100%;
-                margin-bottom: 10px;
+            
+            /* Стили полей формы для мобильных */
+            .newsletter-input,
+            .newsletter-btn {
+                border-radius: 30px; /* Закругленные углы */
+                width: 100%;         /* Полная ширина */
+                margin-bottom: 10px; /* Отступ снизу */
+            }
+            
+            /* Вертикальное расположение кнопок корзины */
+            .cart-actions {
+                flex-direction: column; /* Вертикальное направление */
             }
         }
     </style>
 </head>
+
 <body>
-    <!-- Видимая для пользователя часть шапки сайта -->
+    <!-- Основное содержимое страницы -->
+
+    <!-- Шапка сайта -->
     <header>
         <div class="container">
             <div class="header-top">
+                <!-- Логотип и название -->
                 <div class="logo">
-                    <!-- Лого замена -->
                     <div class="logo-text">Kotofeechka</div>
                     <div class="logo-subtext">Эпоксидная смола ручной работы</div>
                 </div>
-   
+                
+                <!-- Навигационное меню -->
                 <nav class="nav-links">
                     <a href="#home">Главная</a>
                     <a href="#categories">Категории</a>
@@ -467,18 +848,77 @@
                     <a href="#contact">Контакты</a>
                 </nav>
                 
+                <!-- Иконки действий -->
                 <div class="header-icons">
                     <a href="#"><i class="fas fa-search"></i></a>
                     <a href="#"><i class="fas fa-user"></i></a>
-                    <a href="#">
+                    <a href="#" id="cart-icon">
                         <i class="fas fa-shopping-cart"></i>
-                        <span class="cart-count">3</span>
+                        <span class="cart-count">0</span>
                     </a>
                 </div>
             </div>
         </div>
     </header>
-    <!-- хироу секшн - большой баннер -->
+
+    <!-- Модальное окно корзины -->
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-content">
+            <!-- Кнопка закрытия окна -->
+            <span class="close-cart">&times;</span>
+            
+            <!-- Заголовок корзины -->
+            <h2 class="cart-title">Корзина</h2>
+            
+            <!-- Контейнер для товаров -->
+            <div id="cart-items" class="cart-items">
+                <!-- Сообщение по умолчанию -->
+                <div class="cart-empty">Корзина пуста</div>
+            </div>
+            
+            <!-- Общая сумма заказа -->
+            <div class="cart-total">
+                Итого: <span id="cart-total-price">0</span> ₽
+            </div>
+            
+            <!-- Форма оформления заказа -->
+            <form id="order-form" class="cart-form">
+                <h3>Данные для заказа</h3>
+                
+                <!-- Поле для имени -->
+                <div class="form-group">
+                    <label for="customer-name">Ваше имя *</label>
+                    <input type="text" id="customer-name" required>
+                </div>
+                
+                <!-- Поле для телефона -->
+                <div class="form-group">
+                    <label for="customer-phone">Номер телефона *</label>
+                    <input type="tel" id="customer-phone" required>
+                </div>
+                
+                <!-- Поле для email -->
+                <div class="form-group">
+                    <label for="customer-email">Email *</label>
+                    <input type="email" id="customer-email" required>
+                </div>
+                
+                <!-- Поле для комментария -->
+                <div class="form-group">
+                    <label for="customer-comment">Комментарий к заказу</label>
+                    <textarea id="customer-comment" placeholder="Пожелания, вопросы и т.д."></textarea>
+                </div>
+            </form>
+            
+            <!-- Кнопки действий в корзине -->
+            <div class="cart-actions">
+                <button class="cart-btn continue-shopping">Продолжить покупки</button>
+                <button id="send-order-btn" class="cart-btn send-order">Отправить продавцу</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Главный баннер -->
     <section class="hero" id="home">
         <div class="container">
             <h1>Уникальные изделия из эпоксидной смолы</h1>
@@ -486,10 +926,12 @@
             <a href="#products" class="btn">Смотреть каталог</a>
         </div>
     </section>
-    <!-- Категории товаров -->
+
+    <!-- Раздел категорий -->
     <section class="container" id="categories">
         <h2 class="section-title">Категории товаров</h2>
         <div class="categories">
+            <!-- Карточка категории 1 -->
             <div class="category-card">
                 <img src="images/smola_na_shee.jpg" alt="Украшения" class="category-img">
                 <div class="category-info">
@@ -498,6 +940,7 @@
                 </div>
             </div>
             
+            <!-- Карточка категории 2 -->
             <div class="category-card">
                 <img src="images/pepel.jpg" alt="Интерьер" class="category-img">
                 <div class="category-info">
@@ -506,6 +949,7 @@
                 </div>
             </div>
             
+            <!-- Карточка категории 3 -->
             <div class="category-card">
                 <img src="images/84289377-a218-42da-bbac-d6b34bc8d764.jpg" alt="Аксессуары" class="category-img">
                 <div class="category-info">
@@ -513,10 +957,10 @@
                     <p>Броши, брелоки, медиаторы</p>
                 </div>
             </div>
-            
         </div>
     </section>
-    <!-- Популярные товары -->
+
+    <!-- Раздел популярных товаров -->
     <section class="container" id="products">
         <h2 class="section-title">Популярные товары</h2>
         <div class="products">
@@ -531,9 +975,17 @@
                         <span><i class="fas fa-star"></i> 4.9</span>
                     </div>
                     <div class="product-price">1000 ₽</div>
-                    <button class="add-to-cart">В корзину</button>
+                    <!-- Кнопка с data-атрибутами для JavaScript -->
+                    <button class="add-to-cart" 
+                            data-id="1" 
+                            data-title="Кулон 'Весенний цветок'" 
+                            data-price="1000" 
+                            data-image="images/2a161f2e-bc4b-479d-a060-5be8d2af5ef8.jpg">
+                        В корзину
+                    </button>
                 </div>
             </div>
+            
             <!-- Товар 2 -->
             <div class="product-card">
                 <img src="images/cadc52c6-6824-4cc2-ab6b-39e246b45d3b.jpg" alt="Кулон с сухоцветами" class="product-img">
@@ -545,12 +997,19 @@
                         <span><i class="fas fa-star"></i> 4.8</span>
                     </div>
                     <div class="product-price">1000 ₽</div>
-                    <button class="add-to-cart">В корзину</button>
+                    <button class="add-to-cart" 
+                            data-id="2" 
+                            data-title="Кулон 'Нежность'" 
+                            data-price="1000" 
+                            data-image="images/cadc52c6-6824-4cc2-ab6b-39e246b45d3b.jpg">
+                        В корзину
+                    </button>
                 </div>
             </div>
+            
             <!-- Товар 3 -->
             <div class="product-card">
-                <img src="images/kulon_volna.jpg" alt="Кулон морской" class="product-img">
+                <img src="images/kulon_volna.jpg" alt="кулон морской" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Кулон "Морская волна"</h3>
                     <p class="product-description">Кулон с синими оттенками и блестками, напоминающими морскую гладь.</p>
@@ -559,12 +1018,19 @@
                         <span><i class="fas fa-star"></i> 5.0</span>
                     </div>
                     <div class="product-price">1000 ₽</div>
-                    <button class="add-to-cart">В корзину</button>
+                    <button class="add-to-cart" 
+                            data-id="3" 
+                            data-title="Кулон 'Морская волна'" 
+                            data-price="1000" 
+                            data-image="images/kulon_volna.jpg">
+                        В корзину
+                    </button>
                 </div>
             </div>
+            
             <!-- Товар 4 -->
             <div class="product-card">
-                <img src="images/cf2a23ad-7366-4ede-8539-8c20ecb505fb.jpg" alt="Шкатулка Сердце" class="product-img">
+                <img src="images/cf2a23ad-7366-4ede-8539-8c20ecb505fb.jpg" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Шкатулка "Сердце"</h3>
                     <p class="product-description">Уникальная шкатулка в виде сердца.</p>
@@ -573,12 +1039,19 @@
                         <span><i class="fas fa-star"></i> 4.7</span>
                     </div>
                     <div class="product-price">2 500 ₽</div>
-                    <button class="add-to-cart">В корзину</button>
+                    <button class="add-to-cart" 
+                            data-id="4" 
+                            data-title="Шкатулка 'Сердце'" 
+                            data-price="2500" 
+                            data-image="images/cf2a23ad-7366-4ede-8539-8c20ecb505fb.jpg">
+                        В корзину
+                    </button>
                 </div>
             </div>
         </div>
     </section>
-    <!-- О нас -->
+
+    <!-- Раздел "О нас" -->
     <section class="container" id="about">
         <div class="about">
             <h2 class="section-title">О Kotofeechka</h2>
@@ -587,7 +1060,7 @@
                     <h2>История создания бренда</h2>
                     <p>Kotofeechka — это мастерская, где рождаются уникальные изделия из эпоксидной смолы. Мы начали свой путь в 2022 году с небольших украшений для друзей, а сегодня создаем коллекции, которые расходятся по многим городам России.</p>
                     <p>Каждое изделие создается вручную: от идеи до финальной полировки. Мы используем только качественные материалы, уделяя внимание каждой детали. Наша философия — создавать не просто вещи, а эмоции и воспоминания.</p>
-                    <p>В работе мы часто используем природные материалы. Это делает каждое изделие по-настоящему уникальным. стильные шкатулки, хранящие ваши маленькие сокровища; практичные подставки для телефона и мелочей, которые добавят шарма рабочему столу; изысканные кулоны и украшения, подчёркивающие индивидуальность;элегантные шахматы, превращающие игру в искусство; загадочные руны, наполняющие пространство особой энергетикой; оригинальные пепельницы, сочетающие функциональность и дизайн — и многое другое!</p>
+                    <p>В работе мы часто используем природные материалы. Это делает каждое изделие по-настоящему уникальным.</p>
                     <a href="#contact" class="btn">Связаться с нами</a>
                 </div>
                 <div>
@@ -596,48 +1069,56 @@
             </div>
         </div>
     </section>
-    <!-- Преимущества -->
+
+    <!-- Раздел преимуществ -->
     <section class="container">
         <h2 class="section-title">Почему выбирают нас</h2>
         <div class="features">
+            <!-- Преимущество 1 -->
             <div class="feature">
                 <i class="fas fa-hand-sparkles"></i>
                 <h3>Ручная работа</h3>
                 <p>Каждое изделие уникально и создается с любовью и вниманием к деталям</p>
             </div>
             
+            <!-- Преимущество 2 -->
             <div class="feature">
                 <i class="fas fa-award"></i>
                 <h3>Качественные материалы</h3>
                 <p>Используем только проверенные материалы от надежных поставщиков</p>
             </div>
             
+            <!-- Преимущество 3 -->
             <div class="feature">
-               <i class="fas fa-puzzle-piece"></i>
+               <i class="fa-solid fa-puzzle-piece"></i>
                 <h3>Уникальные детали</h3>
-                <p>Мы самостоятельно высушиваем цветы, подбираем декор, печатаем фото — и бережно заключаю их в прозрачный слой эпоксидной смолы. Представьте: нежный лепесток розы или любимый снимок, застывший во времени!</p>
+                <p>Мы самостоятельно высушиваем цветы, подбираем декор, печатаем фото</p>
             </div>
             
+            <!-- Преимущество 4 -->
             <div class="feature">
                 <i class="fas fa-gift"></i>
                 <h3>Упаковка</h3>
-                <p>Надежная и красивая упаковка сохранит целостность покупки и добавит приятных эмоций при распаковке</p>
+                <p>Надежная и красивая упаковка сохранит целостность покупки</p>
             </div>
 
-             <div class="feature">
+            <!-- Преимущество 5 -->
+            <div class="feature">
                 <i class="fas fa-shipping-fast"></i>
                 <h3>Быстрая доставка</h3>
                 <p>Отправляем заказы в день оформления. Доставка по всей России</p>
             </div>
 
-             <div class="feature">
-               <i class="fas fa-heart"></i>
+            <!-- Преимущество 6 -->
+            <div class="feature">
+               <i class="fa-regular fa-face-kiss-wink-heart"></i>
                 <h3>Индивидуальный подход</h3>
-                <p>Мы всегда внимательно прислушиваемся к пожеланиям заказчика. Хотите что-то особенное? Давайте воплотим вашу идею в жизнь!</p>
+                <p>Мы всегда внимательно прислушиваемся к пожеланиям заказчика</p>
             </div>
         </div>
     </section>
-    <!-- Подписка на рассылку -->
+
+    <!-- Форма подписки -->
     <section class="container">
         <div class="newsletter">
             <h2>Подпишитесь на новости</h2>
@@ -648,10 +1129,12 @@
             </form>
         </div>
     </section>
-    <!-- Футер, жопка сайта -->
+
+    <!-- Подвал сайта -->
     <footer id="contact">
         <div class="container">
             <div class="footer-content">
+                <!-- Колонка 1: О компании -->
                 <div>
                     <div class="footer-logo">Kotofeechka</div>
                     <p>Мастерская изделий из эпоксидной смолы ручной работы. Создаем уникальные вещи с 2022 года.</p>
@@ -663,17 +1146,18 @@
                     </div>
                 </div>
                 
+                <!-- Колонка 2: Навигация -->
                 <div class="footer-links">
                     <h3>Категории</h3>
                     <ul>
                         <li><a href="#">Украшения</a></li>
                         <li><a href="#">Декор</a></li>
                         <li><a href="#">Аксессуары</a></li>
-                        <li><a href="#">Шкатулки</a></li>
                         <li><a href="#">Новинки</a></li>
                     </ul>
                 </div>
                 
+                <!-- Колонка 3: Контакты -->
                 <div class="footer-contact">
                     <h3>Контакты</h3>
                     <p><i class="fas fa-envelope"></i> hello@kotofeechka.ru</p>
@@ -683,62 +1167,262 @@
                 </div>
             </div>
             
+            <!-- Копирайт -->
             <div class="copyright">
                 <p>&copy; 2026 Kotofeechka. Все права защищены.</p>
             </div>
         </div>
     </footer>
 
+    <!-- JavaScript код для функциональности сайта -->
     <script>
-        // Функциональность для кнопки "В корзину"
-        document.querySelectorAll('.add-to-cart').forEach(button => {
-            button.addEventListener('click', function() {
-                const countElement = document.querySelector('.cart-count');
-                let count = parseInt(countElement.textContent);
-                count++;
-                countElement.textContent = count;
+        // Инициализация массива корзины
+        let cart = [];
+        
+        // Получение ссылок на DOM-элементы
+        const cartIcon = document.getElementById('cart-icon');
+        const cartModal = document.getElementById('cart-modal');
+        const closeCart = document.querySelector('.close-cart');
+        const cartItemsContainer = document.getElementById('cart-items');
+        const cartTotalPrice = document.getElementById('cart-total-price');
+        const cartCount = document.querySelector('.cart-count');
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        const continueShoppingBtn = document.querySelector('.continue-shopping');
+        const sendOrderBtn = document.getElementById('send-order-btn');
+        const orderForm = document.getElementById('order-form');
+        
+        // Открытие модального окна корзины
+        cartIcon.addEventListener('click', (e) => {
+            e.preventDefault();
+            cartModal.style.display = 'flex';
+            updateCartDisplay();
+        });
+        
+        // Закрытие модального окна по крестику
+        closeCart.addEventListener('click', () => {
+            cartModal.style.display = 'none';
+        });
+        
+        // Закрытие модального окна по кнопке "Продолжить покупки"
+        continueShoppingBtn.addEventListener('click', () => {
+            cartModal.style.display = 'none';
+        });
+        
+        // Закрытие модального окна при клике вне его области
+        window.addEventListener('click', (e) => {
+            if (e.target === cartModal) {
+                cartModal.style.display = 'none';
+            }
+        });
+        
+        // Добавление обработчиков на все кнопки "В корзину"
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const id = button.getAttribute('data-id');
+                const title = button.getAttribute('data-title');
+                const price = parseInt(button.getAttribute('data-price'));
+                const image = button.getAttribute('data-image');
                 
-                // Анимация
-                this.textContent = 'Добавлено!';
-                this.style.backgroundColor = '#5d4037';
+                addToCart(id, title, price, image);
+                
+                // Визуальная обратная связь
+                button.textContent = 'Добавлено!';
+                button.style.backgroundColor = '#4CAF50';
                 
                 setTimeout(() => {
-                    this.textContent = 'В корзину';
-                    this.style.backgroundColor = '#a1887f';
+                    button.textContent = 'В корзину';
+                    button.style.backgroundColor = '#a1887f';
                 }, 1000);
             });
         });
         
-        // Плавная прокрутка для навигации
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
+        // Функция добавления товара в корзину
+        function addToCart(id, title, price, image) {
+            const existingItem = cart.find(item => item.id === id);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    id,
+                    title,
+                    price,
+                    image,
+                    quantity: 1
+                });
+            }
+            
+            updateCartCount();
+            updateCartDisplay();
+        }
         
-        // Обработка формы подписки
-        const newsletterForm = document.querySelector('.newsletter-form');
-        if(newsletterForm) {
-            newsletterForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                const emailInput = this.querySelector('.newsletter-input');
-                if(emailInput.value) {
-                    alert('Спасибо за подписку! На ' + emailInput.value + ' отправлено письмо с подтверждением.');
-                    emailInput.value = '';
-                }
+        // Обновление счетчика товаров в шапке
+        function updateCartCount() {
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCount.textContent = totalItems;
+        }
+        
+        // Обновление отображения корзины
+        function updateCartDisplay() {
+            cartItemsContainer.innerHTML = '';
+            
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<div class="cart-empty">Корзина пуста</div>';
+                cartTotalPrice.textContent = '0';
+                return;
+            }
+            
+            let total = 0;
+            
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                
+                const cartItem = document.createElement('div');
+                cartItem.className = 'cart-item';
+                cartItem.innerHTML = `
+                    <img src="${item.image}" alt="${item.title}" class="cart-item-img">
+                    <div class="cart-item-info">
+                        <div class="cart-item-title">${item.title}</div>
+                        <div class="cart-item-price">${item.price} ₽ × ${item.quantity} шт.</div>
+                        <div class="cart-item-quantity">
+                            <button class="quantity-btn decrease" data-id="${item.id}">-</button>
+                            <span>${item.quantity}</span>
+                            <button class="quantity-btn increase" data-id="${item.id}">+</button>
+                        </div>
+                    </div>
+                    <div class="cart-item-total">${itemTotal} ₽</div>
+                    <button class="remove-item" data-id="${item.id}"><i class="fas fa-trash"></i></button>
+                `;
+                
+                cartItemsContainer.appendChild(cartItem);
+            });
+            
+            cartTotalPrice.textContent = total;
+            
+            // Добавление обработчиков для кнопок изменения количества
+            document.querySelectorAll('.decrease').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const id = e.target.getAttribute('data-id');
+                    updateQuantity(id, -1);
+                });
+            });
+            
+            document.querySelectorAll('.increase').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const id = e.target.getAttribute('data-id');
+                    updateQuantity(id, 1);
+                });
+            });
+            
+            // Добавление обработчиков для кнопок удаления
+            document.querySelectorAll('.remove-item').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const id = e.target.closest('.remove-item').getAttribute('data-id');
+                    removeFromCart(id);
+                });
             });
         }
+        
+        // Функция изменения количества товара
+        function updateQuantity(id, change) {
+            const item = cart.find(item => item.id === id);
+            
+            if (item) {
+                item.quantity += change;
+                
+                if (item.quantity <= 0) {
+                    removeFromCart(id);
+                } else {
+                    updateCartCount();
+                    updateCartDisplay();
+                }
+            }
+        }
+        
+        // Функция удаления товара из корзины
+        function removeFromCart(id) {
+            cart = cart.filter(item => item.id !== id);
+            updateCartCount();
+            updateCartDisplay();
+        }
+        
+        // Обработчик отправки заказа
+        sendOrderBtn.addEventListener('click', () => {
+            if (cart.length === 0) {
+                alert('Корзина пуста. Добавьте товары перед оформлением заказа.');
+                return;
+            }
+            
+            const name = document.getElementById('customer-name').value;
+            const phone = document.getElementById('customer-phone').value;
+            const email = document.getElementById('customer-email').value;
+            const comment = document.getElementById('customer-comment').value;
+            
+            if (!name || !phone || !email) {
+                alert('Пожалуйста, заполните все обязательные поля.');
+                return;
+            }
+            
+            // Формирование деталей заказа
+            const orderDetails = cart.map(item => 
+                `${item.title} - ${item.quantity} шт. × ${item.price} ₽ = ${item.price * item.quantity} ₽`
+            ).join('\n');
+            
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            
+            // Создание текста письма
+            const message = `
+Новый заказ с сайта Kotofeechka!
+
+Заказчик:
+Имя: ${name}
+Телефон: ${phone}
+Email: ${email}
+Комментарий: ${comment || 'Нет комментария'}
+
+Состав заказа:
+${orderDetails}
+
+Итого: ${total} ₽
+
+Дата заказа: ${new Date().toLocaleString()}
+            `;
+            
+            // Открытие почтового клиента
+            const subject = `Новый заказ от ${name}`;
+            const mailtoLink = `mailto:hello@kotofeechka.ru?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
+            
+            window.location.href = mailtoLink;
+            
+            // Оповещение пользователя
+            alert('Заказ отправлен! Откроется почтовый клиент для отправки письма продавцу. Если письмо не открылось, отправьте его вручную на hello@kotofeechka.ru');
+            
+            // Очистка корзины после отправки
+            cart = [];
+            updateCartCount();
+            updateCartDisplay();
+            orderForm.reset();
+            cartModal.style.display = 'none';
+        });
+        
+        // Валидация и форматирование номера телефона
+        document.getElementById('customer-phone').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length > 11) value = value.slice(0, 11);
+            
+            let formattedValue = '';
+            if (value.length > 0) formattedValue = '+7';
+            if (value.length > 1) formattedValue += ' (' + value.slice(1, 4);
+            if (value.length >= 5) formattedValue += ') ' + value.slice(4, 7);
+            if (value.length >= 8) formattedValue += '-' + value.slice(7, 9);
+            if (value.length >= 10) formattedValue += '-' + value.slice(9, 11);
+            
+            e.target.value = formattedValue;
+        });
+        
+        // Инициализация счетчика корзины
+        updateCartCount();
     </script>
 </body>
 </html>
